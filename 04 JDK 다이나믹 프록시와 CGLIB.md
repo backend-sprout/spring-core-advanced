@@ -123,6 +123,27 @@ class TimeInvocationHandler(private val target: Any) : InvocationHandler {
 * `InvocationHandler`를 구현한 구체 클래스를 통해 프록시에 적용할 코드를 작성할 수 있다.          
 * `method.invoke(target, args)`를 호출하는 구문이 실제 타겟 객체를 호출하는 구문이다.            
 
+```kt
+@Test
+fun dynamicA() {
+    val target: AInterface = AImpl()
+    val handler = TimeInvocationHandler(target)
+    val proxy: AInterface = Proxy.newProxyInstance(
+        AInterface::class.java.getClassLoader(), 
+        arrayOf<Class<*>>(AInterface::class.java), 
+        handler
+    ) as AInterface
+    proxy.call()
+    log.info("targetClass={}", target.getClass())
+    log.info("proxyClass={}", proxy.getClass())
+}
+```
+* Proxy.newProxyInstance()를 사용하면 해당 메서드를 통해 프록시 객체를 만들 수 있다.  
+    * 클래스 로더를 지정한다.     
+    * 클래스에서 사용하는 인터페이스를 기술한다.(다중 선택가능)    
+    * InvocationHandler 를 구현한 핸들러를 입력한다.      
+    * 반환형이 Object여서 형변환 구문을 넣어준다.    
+
 
 
 
