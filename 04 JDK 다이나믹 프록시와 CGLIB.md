@@ -67,3 +67,39 @@ private fun dynamicCall(method: Method, target: Any) {
 
 JDK 다이나믹 프록시는 자바에서 제공해주는 동적 프록시 기술이다.          
 인터페이스 기반의 클래스를 프록시로 만들어주는 역할을 한다.         
+
+## 준비물 
+
+```kt
+fun interface AInterface {
+    fun call(): String
+}
+```
+```kt
+@Slf4j
+class AImpl : AInterface {
+    override fun call(): String {
+        log.info("A 호출")
+        return "a"
+    }
+}
+```
+인터페이스와 이를 구현한 구현체를 준비한다.   
+
+## 실습 
+JDK 다이나믹 프록시를 적용할때, 실제 프록시에 적용할 코드는 `InvocationHandler`에 정의한다.     
+
+```java
+package java.lang.reflect;
+
+public interface InvocationHandler {
+     public Object invoke(Object proxy, Method method, Object[] args)
+     throws Throwable;
+}    
+```
+**제공되는 파라미터는 다음과 같다.**    
+   
+* Object proxy : 프록시 자신
+* Method method : 호출한 메서드
+* Object[] args : 메서드를 호출할 때 전달한 인수
+
