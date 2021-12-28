@@ -96,10 +96,13 @@ public interface InvocationHandler {
      public Object invoke(Object proxy, Method method, Object[] args)
      throws Throwable;
 }    
-```
+```   
+  
 **제공되는 파라미터는 다음과 같다.**    
    
-* Object proxy : 프록시 자신
-* Method method : 호출한 메서드
-* Object[] args : 메서드를 호출할 때 전달한 인수
+* **Object proxy** : 프록시 자신
+* **Method method** : 호출한 메서드
+* **Object[] args** : 메서드를 호출할 때 전달한 인수
+
+
 
