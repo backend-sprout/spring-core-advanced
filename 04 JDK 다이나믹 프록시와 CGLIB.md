@@ -140,11 +140,18 @@ fun dynamicA() {
 ```
 * Proxy.newProxyInstance()를 사용하면 해당 메서드를 통해 프록시 객체를 만들 수 있다.  
     * 클래스 로더를 지정한다.     
-    * 클래스에서 사용하는 인터페이스를 기술한다.(다중 선택가능)    
+    * 클래스에서 사용하는 인터페이스를 기술한다.(다중 기술 가능)    
     * InvocationHandler 를 구현한 핸들러를 입력한다.      
     * 반환형이 Object여서 형변환 구문을 넣어준다.    
 
-
+```console
+TimeInvocationHandler - TimeProxy 실행
+AImpl - A 호출
+TimeInvocationHandler - TimeProxy 종료 resultTime=0
+JdkDynamicProxyTest - targetClass=class hello.proxy.jdkdynamic.code.AImpl
+JdkDynamicProxyTest - proxyClass=class com.sun.proxy.$Proxy1
+```   
+실제 출력 결과를 보면 프록시가 정상 수행된 것을 확인할 수 있다.   
 
 
   
