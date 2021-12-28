@@ -93,8 +93,7 @@ JDK 다이나믹 프록시를 적용할때, 실제 프록시에 적용할 코드
 package java.lang.reflect;
 
 public interface InvocationHandler {
-     public Object invoke(Object proxy, Method method, Object[] args)
-     throws Throwable;
+     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable;
 }    
 ```   
   
