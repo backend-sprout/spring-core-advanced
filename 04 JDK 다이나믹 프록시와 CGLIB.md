@@ -153,7 +153,9 @@ JdkDynamicProxyTest - proxyClass=class com.sun.proxy.$Proxy1
 실제 출력 결과를 보면 프록시가 정상 수행된 것을 확인할 수 있다.   
 
 ## 실행 순서   
-      
+  
+![image](https://user-images.githubusercontent.com/50267433/147561169-4f957640-743a-4d43-8118-8c63322066fc.png)
+
 1. 클라이언트는 JDK 동적 프록시의 call() 을 실행한다.      
 2. JDK 동적 프록시는 `InvocationHandler.invoke()`를 호출한다.     
     `TimeInvocationHandler`가 구현체로 있으로 `TimeInvocationHandler.invoke()`가 호출된다.      
