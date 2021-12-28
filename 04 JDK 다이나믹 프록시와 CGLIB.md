@@ -120,4 +120,11 @@ class TimeInvocationHandler(private val target: Any) : InvocationHandler {
     }
 }
 ```
+* `InvocationHandler`를 구현한 구체 클래스를 통해 프록시에 적용할 코드를 작성할 수 있다.          
+* `method.invoke(target, args)`를 호출하는 구문이 실제 타겟 객체를 호출하는 구문이다.            
+
+
+
+
+  
 
