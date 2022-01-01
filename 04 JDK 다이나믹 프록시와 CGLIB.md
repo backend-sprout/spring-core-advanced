@@ -165,4 +165,6 @@ JdkDynamicProxyTest - proxyClass=class com.sun.proxy.$Proxy1
 5. AImpl 인스턴스의 call() 의 실행이 끝나면 TimeInvocationHandler 로 응답이 돌아온다.     
     시간 로그를 출력하고 결과를 반환한다   
   
+# CGLIB  
+
 
